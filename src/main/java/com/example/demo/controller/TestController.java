@@ -32,7 +32,8 @@ public class TestController {
     @ApiOperation(value = "ping")
     @GetMapping("/ping")
     public Result<String> ping() {
-        int a=10/0;
+        //模拟算数异常
+        // int a=10/0;
         return ResultUtil.success("连通成功:welcome!");
     }
 
