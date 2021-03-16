@@ -9,12 +9,12 @@ spring:
   datasource:
     username: root
     password: Az789@At
-    url: jdbc:mysql://81.70.63.153:3306/rework_demo?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/rework_demo?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
     driver-class-name: com.mysql.jdbc.Driver
 
 # mybatis
 mybatis:
-  mapper-locations: classpath:/mapper/*.xml
+  mapper-locations: classpath:/c/*.xml
   configuration:
     map-underscore-to-camel-case: true # 驼峰自动转换
   #指定entity扫描包类让mybatis自定扫描到自定义的entity。
@@ -23,5 +23,4 @@ mybatis:
 # 日志等级
 logging:
   level:
-    root: info #debug下有报错，请空了处理
-    com.example.demo.mapper: debug #查看sql
+    com.example.demo.mapper: debug
