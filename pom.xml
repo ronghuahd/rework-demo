@@ -57,11 +57,11 @@
         </dependency>
 
 
-        <!--数据库-->
+        <!--数据库  由于springboot版本过高，这里用5版本会出现连接问题-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.41</version>
+            <version>8.0.19</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
