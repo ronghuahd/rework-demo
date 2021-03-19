@@ -8,12 +8,14 @@ server:
 
 # 配置数据库
 spring:
-  datasource: # 数据库链接配置
+  datasource:
     username: root
     password: Az789@At
     url: jdbc:mysql://81.70.63.153:3306/rework_demo?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
-    driver-class-name: com.mysql.cj.jdbc.Driver #高版本
-  jackson:  # 配置全局时区和日期格式化
+    #高版本
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 配置全局时区和日期格式化
+  jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
 
@@ -21,12 +23,15 @@ spring:
 mybatis:
   mapper-locations: classpath:/mapper/*.xml
   configuration:
-    map-underscore-to-camel-case: true # 驼峰自动转换
+    # 驼峰自动转换
+    map-underscore-to-camel-case: true
   #指定entity扫描包类让mybatis自定扫描到自定义的entity。
   type-aliases-package: com.example.demo.entity
 
 # 日志等级    还需设置生成导出到文件还有文件过期时间和大小限制
 logging:
   level:
-    root: info #debug下有报错，请空了处理
-    com.example.demo.mapper: debug #查看sql
+    #debug下有报错，todo 空了处理
+    root: info
+    #查看sql
+    com.example.demo.dao: debug

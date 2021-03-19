@@ -29,7 +29,7 @@ public class MyExceptionConfig {
     @ExceptionHandler(value = Exception.class)
     <T> Result<T> handleException(Exception e, HttpServletRequest request) {
         //返回json数据
-        log.error("全局异常:{}", e);
+        log.error("全局异常:{},{}", e.getMessage(),e);
         return ResultUtil.error(ResultEnum.INTERNAL_SERVER_ERROR.code(), e.getMessage());
     }
 

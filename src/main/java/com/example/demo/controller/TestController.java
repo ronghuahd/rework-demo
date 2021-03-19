@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.Test;
+import com.example.demo.entity.model.TestDO;
 import com.example.demo.message.Result;
 import com.example.demo.service.TestService;
 import com.example.demo.utils.ResultUtil;
@@ -39,14 +39,14 @@ public class TestController {
 
     @ApiOperation(value = "通过id查询数据")
     @GetMapping("/query_by_id")
-    public Result<Test> queryById(
-            @ApiParam("id") @RequestParam("id") Long id) {
+    public Result<TestDO> queryById(
+            @ApiParam("id") @RequestParam("id") Integer id) {
         return ResultUtil.success(testService.findById(id));
     }
 
     @ApiOperation(value = "通过name模糊查询数据")
     @GetMapping("/query_by_name")
-    public Result<List<Test>> queryByName(
+    public Result<List<TestDO>> queryByName(
             @ApiParam("name") @RequestParam("name") String name) {
         return ResultUtil.success(testService.findByName(name));
     }
@@ -62,7 +62,7 @@ public class TestController {
     @ApiOperation(value = "根据id修改数据")
     @PutMapping("/update")
     public Result<String> update(
-            @ApiParam("id") @RequestParam("id") Long id,
+            @ApiParam("id") @RequestParam("id") Integer id,
             @ApiParam("name") @RequestParam("name") String name) {
         testService.updateNameById(id, name);
         return ResultUtil.success();

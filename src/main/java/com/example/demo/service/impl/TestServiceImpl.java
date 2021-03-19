@@ -1,7 +1,7 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.entity.Test;
-import com.example.demo.mapper.TestMapper;
+import com.example.demo.entity.model.TestDO;
+import com.example.demo.dao.TestMapper;
 import com.example.demo.service.TestService;
 import org.springframework.stereotype.Service;
 
@@ -14,12 +14,12 @@ public class TestServiceImpl implements TestService {
     private TestMapper testMapper;
 
     @Override
-    public Test findById(long id) {
+    public TestDO findById(int id) {
         return testMapper.findById(id);
     }
 
     @Override
-    public List<Test> findByName(String name) {
+    public List<TestDO> findByName(String name) {
         return testMapper.findByName(name);
     }
 
@@ -29,7 +29,7 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public void updateNameById(long id, String name) {
+    public void updateNameById(int id, String name) {
         testMapper.updateNameById(id, name);
     }
 }

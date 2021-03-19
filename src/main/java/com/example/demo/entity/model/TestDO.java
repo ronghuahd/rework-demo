@@ -1,14 +1,13 @@
-package com.example.demo.entity;
+package com.example.demo.entity.model;
 
 import lombok.Data;
 
 import java.util.Date;
 
 @Data
-public class Test {
-    private Long id;
+public class TestDO {
+    private Integer id;
     private String name;
     private Date createTime;
     private Date updateTime;
-
 }
