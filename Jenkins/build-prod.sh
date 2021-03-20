@@ -9,6 +9,7 @@ ActiveProfiles=prod
 #内部端口
 targetPort=8080
 #外部容器端口号
+outPort=9090
 #旧镜像版本号
 oldVendor=1.0.0
 #镜像版本号
@@ -44,4 +45,4 @@ docker rmi -f $projectName:$oldVendor
 docker build -t $projectName:$vendor .
 
 #启动镜像生成容器
-docker run --name $projectName -d -p $targetPort:$targetPort $projectName:$vendor
+docker run --name $projectName -d -p $outPort:$targetPort $projectName:$vendor

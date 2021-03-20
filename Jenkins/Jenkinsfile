@@ -1,13 +1,5 @@
 pipeline {
     agent any
-    options {
-        //设置管道运行的超时时间，在此之后，Jenkins将中止管道
-        timeout(time: 10, unit: 'MINUTES')
-        // 失败重试次数
-        retry(2)
-        //输出时间戳
-        timestamps()
-    }
     stages {
         stage('package') {
             agent {
